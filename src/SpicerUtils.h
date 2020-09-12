@@ -7,11 +7,11 @@
 #include <Arduino.h>
 #include "MIDIHelpers.h"
 
-class CCDefinition {
+class CCMessage {
   public:
   byte channel;
   byte control;
-  CCDefinition(byte, byte);
+  CCMessage(byte, byte);
 };
 
 class SpicerInput {
@@ -25,10 +25,10 @@ class SpicerInput {
   int tolerance = 10;
   char *name;
   int changed = false;
-  CCDefinition *CC;
+  CCMessage *CC;
 
-  SpicerInput(char *, int, CCDefinition *);
-  SpicerInput(char *, int, CCDefinition *, int, int);
+  SpicerInput(char *, int, CCMessage *);
+  SpicerInput(char *, int, CCMessage *, int, int);
   int update();
   void debug(int force);
 };

@@ -6,12 +6,12 @@
 #include <Arduino.h>
 #include "SpicerUtils.h"
 
-CCDefinition::CCDefinition(byte _ch, byte _ctl){
+CCMessage::CCMessage(byte _ch, byte _ctl){
   channel = _ch;
   control = _ctl;
 };
 
-SpicerInput::SpicerInput(char *_name, int _pin, CCDefinition *_CC){ // digital constructor
+SpicerInput::SpicerInput(char *_name, int _pin, CCMessage *_CC){ // digital constructor
     Serial.print("digital input ");
     name = _name;
     Serial.println(name);
@@ -21,7 +21,7 @@ SpicerInput::SpicerInput(char *_name, int _pin, CCDefinition *_CC){ // digital c
     pinMode(pin, INPUT_PULLUP);
     update();
 }
-SpicerInput::SpicerInput(char *_name, int _pin, CCDefinition *_CC, int _scaleTo, int _tolerance){ // analog constructor
+SpicerInput::SpicerInput(char *_name, int _pin, CCMessage *_CC, int _scaleTo, int _tolerance){ // analog constructor
   Serial.print("analog input ");
   name = _name;
   Serial.println(name);
