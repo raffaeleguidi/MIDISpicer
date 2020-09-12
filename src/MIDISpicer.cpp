@@ -25,7 +25,6 @@ SpicerInput *Trimmer1;
 SpicerInput *Jack1; 
 
 void setupInputs(){
-  //SpicerInput *Test = new SpicerInput();
   Push1 = new SpicerInput("Push1", 22, new CCMessage(0, 1));
   Trimmer1 = new SpicerInput("Trimmer1", A5, new CCMessage(0, 80), 127, 10);
   Jack1 = new SpicerInput("Jack1", A4, new CCMessage(0, 7), 127, 20);
